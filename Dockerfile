@@ -4,10 +4,10 @@ USER root
 ARG openjdk_version="17"
 RUN apt-get update --yes && \
     apt-get install --yes --no-install-recommends \
-    "openjdk-${openjdk_version}-jre-headless" \
+    build-essential \
     ca-certificates-java \
     default-libmysqlclient-dev \
-    build-essential  \
+    "openjdk-${openjdk_version}-jre-headless" \
     pkg-config && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
