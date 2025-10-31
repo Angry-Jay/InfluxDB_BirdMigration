@@ -15,6 +15,7 @@ services:
         - DOCKER_INFLUXDB_INIT_BUCKET=animal-tracking
         - DOCKER_INFLUXDB_INIT_RETENTION=0d
         - DOCKER_INFLUXDB_INIT_DB=animal-tracking
+        - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=admin-token
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:8086/ping" ]
       interval: 30s
