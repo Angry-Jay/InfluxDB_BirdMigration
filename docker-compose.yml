@@ -5,8 +5,6 @@ services:
     restart: unless-stopped
     ports:
         - "8086:8086"
-    volumes:
-        - influxdb:/var/lib/influxdb
     environment:
         - DOCKER_INFLUXDB_INIT_MODE=setup
         - DOCKER_INFLUXDB_INIT_USERNAME=admin
@@ -31,6 +29,4 @@ services:
     environment:
       JUPYTER_ENABLE_LAB: yes
     command: start-notebook.py --NotebookApp.token=''    
-  
-volumes:
-  influxdb:
+    
